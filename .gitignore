@@ -1,0 +1,8 @@
+build
+devel
+logs
+.catkin_tools
+src/thera_z1
+src/2D_lidar_person_detection/dr_spaam_ros/models/*
+dr_spaam_ros/models/*
+

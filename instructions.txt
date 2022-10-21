@@ -1,0 +1,23 @@
+source /opt/ros/noetic/setup.bash
+cd catkin_ws
+source devel/setup.bash
+export ROS_MASTER_URI=http://10.68.0.1:11311
+export ROS_IP=10.68.0.129
+roslaunch dr_spaam_ros dr_spaam_ros.launch
+
+ssh pal@10.68.0.1
+roslaunch spencer_people_tracking_launch tracking_personalized.launch laser_bottom:=false
+
+THETA
+v4l2-ctl --list-devices
+
+https://husarion.com/tutorials/ros-components/ricoh-theta-z1/ 
+sudo modprobe v4l2loopback
+cd ~/catkin_ws/src/thera_z1/libuvc-theta-sample/gst
+./gst_loopback 
+
+roslaunch tracking_demo theta_camera.launch 
+
+rosparam set cv_camera/device_id 2
+rosrun cv_camera cv_camera_node
+
