@@ -45,7 +45,11 @@ Put camera in LIVE mode and run the driver.
 cd ~/your_ws/src/theta_z1/libuvc-theta-sample/gst
 sh streaming_theta.sh
 ```
-Run the ROS node
+Copy and paste the `camera_info/theta_camere.yaml` in the right position. 
+
+Run the ROS node:
 ```
 roslaunch tracking_demo theta_camera.launch 
 ```
+
+You can use rviz to visulize data, some predefined profiles are provided. 
